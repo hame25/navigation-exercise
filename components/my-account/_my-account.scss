@@ -1,0 +1,10 @@
+.header-my-account {
+
+	.header-my-account-menu {
+		display: none;
+
+		&.open {
+			display: block;
+		}
+	}
+}

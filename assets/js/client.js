@@ -1,5 +1,5 @@
-import Navigation from '../../components/cat-nav/'
+import Header from '../../components/header/'
 
 window.onload= function () {
-	new Navigation();
+	new Header();
 };
