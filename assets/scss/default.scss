@@ -1,0 +1,13 @@
+@import "normalize";
+@import "variables";
+@import "layout";
+
+@import "../../components/header/header";
+
+body{
+	background-color:#ffffff;
+}
+
+#content {
+	@include outer-container;
+}

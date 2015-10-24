@@ -1,0 +1,30 @@
+@import "../cat-nav/cat-nav";
+
+.header {
+	display: flex;
+	height: 50px;
+
+	.top-content {
+		
+	}
+
+	.header-logo {
+		order: 3;
+	}
+
+	.header-search {
+		order:2;
+	}
+
+	.navigation {
+		order: 1
+	}
+
+	.header-my-account {
+		order: 4;
+	}
+
+	.header-basket {
+		order: 5;
+	}
+}

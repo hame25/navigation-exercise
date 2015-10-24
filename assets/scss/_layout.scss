@@ -1,0 +1,11 @@
+@import "bourbon";
+@import "neat";
+
+$small: new-breakpoint(max-width 35em 12); //approx 568px
+$medium: new-breakpoint(max-width 48em 12); //approx 768px
+$large: new-breakpoint(max-width 64em 12); //approx 1024px
+$xlarge: new-breakpoint(max-width 80em 12); //approx 1280px;
+
+#content {
+	@include outer-container;
+}

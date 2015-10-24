@@ -1,0 +1,10 @@
+.navigation {
+
+	.nav-menu {
+		display: none;
+
+		&.open {
+			display:block;
+		}
+	}
+}
