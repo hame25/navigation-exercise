@@ -1,5 +1,12 @@
 .header-basket {
 
+	.basket-open-link {
+		&:before {
+			font-family: 'icons';
+			content: 'b';
+		}
+	}
+
 	.header-basket-menu {
 		display: none;
 

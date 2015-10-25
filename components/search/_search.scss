@@ -1,4 +1,11 @@
 .header-search {
+	.search-open-link {
+		&:before {
+			font-family: 'icons';
+			content: 's';
+		}
+	}
+
 	.search-form {
 		display: none;
 

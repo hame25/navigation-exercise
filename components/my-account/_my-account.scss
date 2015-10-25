@@ -1,5 +1,12 @@
 .header-my-account {
 
+	.my-account-open-link {
+		&:before {
+			font-family: 'icons';
+			content: 'W';
+		}
+	}
+
 	.header-my-account-menu {
 		display: none;
 
