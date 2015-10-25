@@ -1,5 +1,12 @@
 .navigation {
 
+	.nav-open-link {
+		&:before {
+			font-family: 'icons';
+			content: 't';
+		}
+	}
+
 	.nav-menu {
 		display: none;
 

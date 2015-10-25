@@ -1,0 +1,10 @@
+.header-basket {
+
+	.header-basket-menu {
+		display: none;
+
+		&.open {
+			display:block;
+		}
+	}
+}

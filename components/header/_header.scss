@@ -1,9 +1,11 @@
 @import "../cat-nav/cat-nav";
 @import "../my-account/my-account";
+@import "../basket/basket";
+@import "../search/search";
 
 .header {
 	display: flex;
-	height: 50px;
+	height: 60px;
 
 	.top-content {
 		

@@ -11,3 +11,15 @@ body{
 #content {
 	@include outer-container;
 }
+
+@font-face {
+    font-family: icons;
+    src: url(../fonts/tescoicons.woff) format(woff);
+}
+
+
+/** move these to global at some point ***/
+.visually-hidden {
+	position: absolute;
+	left: -99999px;
+}

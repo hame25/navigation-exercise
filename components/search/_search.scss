@@ -1,0 +1,9 @@
+.header-search {
+	.search-form {
+		display: none;
+
+		&.open {
+			display: block;
+		}
+	}
+}
