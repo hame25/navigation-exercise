@@ -10,6 +10,12 @@
 		display: inline-block;
 	}
 
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+
 	.nav-menu {
 		display: none;
 
@@ -19,11 +25,19 @@
 			display:block;
 		}
 
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
 		position: absolute;
 		left: 0;
 		width: 100%;
+
+		li {
+			ul {
+				display: none;
+			}
+			&.open {
+				ul {
+					display: block;
+				}
+			}
+		}
 	}
 }

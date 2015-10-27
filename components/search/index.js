@@ -4,7 +4,6 @@ import EventTarget from '../../utility/eventTarget.js'
 class Search extends EventTarget {
 
 	constructor () {
-		//EventTarget.call(this);
 		super();
 		this.container = $('.header-search');
 		this.searchForm = this.container.find('.search-form');
@@ -17,7 +16,6 @@ class Search extends EventTarget {
 	}
 
 	toggleMenu () {
-
 		if(this.searchForm.hasClass('open')) {
 			this.close();
 		} else {
