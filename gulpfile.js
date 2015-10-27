@@ -36,6 +36,6 @@ gulp.task("webpack", function(callback) {
 });
 
 gulp.task('watch', function() {
-  gulp.watch('./assets/scss/**/*.scss', ['sass']);
+  gulp.watch(['./assets/scss/**/*.scss', './components/**/*.scss'], ['sass']);
   gulp.watch('./components/**/*.js', ['webpack']);
 });

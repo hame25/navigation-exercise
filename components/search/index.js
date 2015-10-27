@@ -13,6 +13,7 @@ class Search extends EventTarget {
 
 	bindEvents () {
 		this.container.find('.search-open-link').on('click', this.toggleMenu.bind(this));
+		this.container.find('.close-search').on('click', this.close.bind(this));
 	}
 
 	toggleMenu () {

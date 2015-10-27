@@ -5,13 +5,25 @@
 			font-family: 'icons';
 			content: 't';
 		}
+		padding-top: 10px;
+		padding-bottom: 10px;
+		display: inline-block;
 	}
 
 	.nav-menu {
 		display: none;
 
+		border: 1px solid #ccc;
+
 		&.open {
 			display:block;
 		}
+
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		left: 0;
+		width: 100%;
 	}
 }

@@ -39,6 +39,10 @@ class Header {
 		this.myAccount.close();
 		this.basket.close();
 	}
+
+	getHeaderHeight () {
+
+	}
 }
 
 export default Header;
