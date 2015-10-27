@@ -5,15 +5,26 @@
 
 .header {
 	display: flex;
+	align-items: stretch;
 	height: 60px;
+	padding: 1em;
+	/* abstract below */
+	border-bottom: 1px solid #ccc;
 
-	.top-content {
-		
+	a, a:visited {
+		color:#00539f;
+		text-decoration: none;
+		font-size: 20px;
+	} 
+	a:hover, a:active {
+		color:#009cda;
 	}
 
 	.header-logo {
 		order: 3;
 		font-size: 50px;
+		flex-grow: 1;
+		text-align: center;
 		
 		&:before {
 			font-family: 'icons';
@@ -23,17 +34,22 @@
 
 	.header-search {
 		order:2;
+		flex: 0 0 30px;
 	}
 
 	.navigation {
-		order: 1
+		order: 1;
+		flex: 0 0 30px;
+
 	}
 
 	.header-my-account {
 		order: 4;
+		flex: 0 0 30px;
 	}
 
 	.header-basket {
 		order: 5;
+		flex: 0 0 30px;
 	}
 }
