@@ -18,24 +18,45 @@
 
 	.nav-menu {
 		display: none;
-
 		border: 1px solid #ccc;
+		position: absolute;
+		left: 0;
+		width: 100%;
 
 		&.open {
 			display:block;
 		}
 
-		position: absolute;
-		left: 0;
-		width: 100%;
-
 		li {
+			width: 100%;
+
+			&:after {
+				font-family: 'icons';
+				content: 'r';
+			}
+
 			ul {
 				display: none;
 			}
+
+			a {
+				color: #353535;
+				display: block;
+
+				&:active, &:hover {
+					background-color: #009cda;
+					color: #fff;
+				}
+			}
+
 			&.open {
-				ul {
+				>ul {
 					display: block;
+					position: absolute;
+					background-color: #fff;
+					top:0;
+					width: 100%;
+					height: 100%;
 				}
 			}
 		}
