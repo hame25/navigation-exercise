@@ -12,7 +12,8 @@ class Navigation extends EventTarget {
 
 	bindEvents () {
 		this.container.find('.nav-open-link').on('click', this.toggleMenu.bind(this));
-		this.menu.on('click', 'li', this.taxonomyClick.bind(this));
+		this.menu.on('click', 'li > a', this.taxonomyClick.bind(this));
+		this.menu.on('click', '.nav-back-link', this.backLinkClick.bind(this));
 	}
 
 	toggleMenu () {
@@ -25,6 +26,7 @@ class Navigation extends EventTarget {
 
 	close () {
 		this.menu.removeClass('open');
+		this.reset();
 	}
 
 	open () {
@@ -33,15 +35,25 @@ class Navigation extends EventTarget {
 	}
 
 	taxonomyClick (e) {
-		var element = e.currentTarget;
-		if(this.hasChildNodes(element)) {
-			element.className = 'open';
+		let element = e.currentTarget;
+		if(this.hasSiblingMenu(element)) {
+			element.parentNode.className = 'open';
 			e.preventDefault();
 		}
 	}
 
-	hasChildNodes (element) {
-		return $(element).find('ul').length;
+	hasSiblingMenu (element) {
+		return element.nextSibling;
+	}
+
+	backLinkClick (e) {
+		let element = $(e.currentTarget);
+		element.closest('li').removeClass('open');
+		e.preventDefault();
+	}
+
+	reset () {
+		this.menu.find('li.open').removeClass('open');
 	}
 }
 

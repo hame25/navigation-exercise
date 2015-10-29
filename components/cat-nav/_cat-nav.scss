@@ -30,18 +30,23 @@
 		li {
 			width: 100%;
 
-			&:after {
-				font-family: 'icons';
-				content: 'r';
-			}
-
-			ul {
+			div {
 				display: none;
 			}
+
+			/*ul {
+				display: none;
+			}*/
 
 			a {
 				color: #353535;
 				display: block;
+
+				&:after {
+					font-family: 'icons';
+					content: 'r';
+					float: right;
+				}
 
 				&:active, &:hover {
 					background-color: #009cda;
@@ -50,7 +55,8 @@
 			}
 
 			&.open {
-				>ul {
+				//>ul {
+				>div {
 					display: block;
 					position: absolute;
 					background-color: #fff;
