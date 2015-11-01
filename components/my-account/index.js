@@ -4,8 +4,8 @@ import EventTarget from '../../utility/eventTarget.js'
 class MyAccount extends EventTarget {
 
 	constructor () {
-		//EventTarget.call(this);
 		super();
+		this.isOpen = false;
 		this.container = $('.header-my-account');
 		this.menu = this.container.find('.header-my-account-menu');
 		this.bindEvents();
@@ -26,11 +26,14 @@ class MyAccount extends EventTarget {
 
 	open () {
 		this.menu.addClass('open');
+		this.isOpen = true;
 		this.fire('myAccount:open');
 	}
 
 	close () {
 		this.menu.removeClass('open');
+		this.isOpen = false;
+		this.fire('myAccount:close');
 	}
 }
 

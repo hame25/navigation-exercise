@@ -5,6 +5,7 @@ class Basket extends EventTarget {
 
 	constructor () {
 		super();
+		this.isOpen = false;
 		this.container = $('.header-basket');
 		this.menu = this.container.find('.header-basket-menu');
 		this.bindEvents();
@@ -24,10 +25,13 @@ class Basket extends EventTarget {
 
 	close () {
 		this.menu.removeClass('open');
+		this.isOpen = false;
+		this.fire('basket:close');
 	}
 
 	open () {
 		this.menu.addClass('open');
+		this.isOpen = true;
 		this.fire('basket:open');
 	}
 }

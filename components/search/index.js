@@ -5,6 +5,7 @@ class Search extends EventTarget {
 
 	constructor () {
 		super();
+		this.isOpen = false;
 		this.container = $('.header-search');
 		this.searchForm = this.container.find('.search-form');
 		this.bindEvents();
@@ -25,11 +26,13 @@ class Search extends EventTarget {
 
 	open () {
 		this.searchForm.addClass('open');
+		this.isOpen = true;
 		this.fire('search:open');
 	}
 
 	close () {
 		this.searchForm.removeClass('open');
+		this.isOpen = false;
 	}
 }
 

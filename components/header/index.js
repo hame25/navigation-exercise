@@ -2,10 +2,12 @@ import Navigation from '../cat-nav/';
 import MyAccount from '../my-account/';
 import Basket from '../basket/';
 import Search from '../search/';
+import BackgroundMask from '../background-mask/';
 
 class Header {
 
 	constructor () {
+		this.mask = new BackgroundMask();
 		this.nav = new Navigation();
 		this.myAccount = new MyAccount();
 		this.basket = new Basket();
@@ -21,27 +23,30 @@ class Header {
 	}
 
 	openNavigation () {
-		this.myAccount.close();
-		this.basket.close();
+		this.closeOpenMenus([this.myAccount, this.basket]);
 	}
 
 	openMyAccount () {
-		this.nav.close();
-		this.basket.close();
+		this.closeOpenMenus([this.nav, this.basket]);
 	}
 
 	openBasket () {
-		this.nav.close();
-		this.myAccount.close();
+		this.closeOpenMenus([this.nav, this.myAccount]);
 	}
 	openSearch () {
-		this.nav.close();
-		this.myAccount.close();
-		this.basket.close();
+		this.closeOpenMenus([this.myAccount, this.basket, this.nav]);
 	}
 
-	getHeaderHeight () {
+	closeOpenMenus (menus) {
+		menus.map((menu) => {
+			this.closeMenu(menu);
+		});
+	}
 
+	closeMenu (menu) {
+		if(menu.isOpen) {
+			menu.close();
+		}
 	}
 }
 

@@ -5,6 +5,7 @@ class Navigation extends EventTarget {
 
 	constructor () {
 		super();
+		this.isOpen = false;
 		this.container = $('.navigation');
 		this.menu = this.container.find('.nav-menu');
 		this.bindEvents();
@@ -27,10 +28,13 @@ class Navigation extends EventTarget {
 	close () {
 		this.menu.removeClass('open');
 		this.reset();
+		this.isOpen = false;
+		this.fire('navigation:close');
 	}
 
 	open () {
 		this.menu.addClass('open');
+		this.isOpen = true;
 		this.fire('navigation:open');
 	}
 
