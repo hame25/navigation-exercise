@@ -16,25 +16,44 @@ class Header {
 	}
 
 	bindEvents () {
-		this.nav.addListener('navigation:open', this.openNavigation.bind(this));
-		this.myAccount.addListener('myAccount:open', this.openMyAccount.bind(this));
-		this.basket.addListener('basket:open', this.openBasket.bind(this));
-		this.search.addListener('search:open', this.openSearch.bind(this));
+		this.nav.addListener('navigation:open', this.menuOpen.bind(this, 'nav'));
+		this.nav.addListener('navigation:close', this.menuClosed.bind(this));
+		this.myAccount.addListener('myAccount:open', this.menuOpen.bind(this, 'myAccount'));
+		this.myAccount.addListener('myAccount:close', this.menuClosed.bind(this));
+		this.basket.addListener('basket:open', this.menuOpen.bind(this, 'basket'));
+		this.basket.addListener('basket:close', this.menuClosed.bind(this));
+		this.search.addListener('search:open', this.menuOpen.bind(this, 'search'));
+		this.search.addListener('search:close', this.menuClosed.bind(this));
 	}
 
-	openNavigation () {
-		this.closeOpenMenus([this.myAccount, this.basket]);
+	isMenuOpen () {
+		return (this.nav.isOpen || this.myAccount.isOpen || this.basket.isOpen || this.search.isOpen)
 	}
 
-	openMyAccount () {
-		this.closeOpenMenus([this.nav, this.basket]);
+	menuOpen (menu) {
+		let menuArray = []
+		switch(menu) {
+			case 'nav':
+				menuArray = [this.myAccount, this.basket];
+				break;
+			case 'myAccount':
+				menuArray = [this.nav, this.basket];
+				break;
+			case 'basket':
+				menuArray = [this.nav, this.myAccount];
+				break;
+			case 'search':
+				menuArray = [this.myAccount, this.basket, this.nav];
+				break;
+		}
+		this.closeOpenMenus(menuArray);
+		this.showMask();
 	}
 
-	openBasket () {
-		this.closeOpenMenus([this.nav, this.myAccount]);
-	}
-	openSearch () {
-		this.closeOpenMenus([this.myAccount, this.basket, this.nav]);
+	menuClosed () {
+		if(!this.isMenuOpen()) {
+			this.mask.hide();
+		}
 	}
 
 	closeOpenMenus (menus) {
@@ -46,6 +65,12 @@ class Header {
 	closeMenu (menu) {
 		if(menu.isOpen) {
 			menu.close();
+		}
+	}
+
+	showMask () {
+		if(!this.mask.isVisible) {
+			this.mask.show();
 		}
 	}
 }

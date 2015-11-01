@@ -12,6 +12,8 @@
 
 	.header-basket-menu {
 		display: none;
+		z-index: 2;
+		background-color: #fff;
 
 		&.open {
 			display:block;

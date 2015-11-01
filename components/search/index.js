@@ -33,6 +33,7 @@ class Search extends EventTarget {
 	close () {
 		this.searchForm.removeClass('open');
 		this.isOpen = false;
+		this.fire('search:close');
 	}
 }
 
